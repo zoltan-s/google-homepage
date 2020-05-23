@@ -5,6 +5,7 @@ html {
 
 body {
   min-width: 980px;
+  margin: auto;
 }
 
 /* Navigation */
@@ -16,10 +17,12 @@ body {
   line-height: 24px;
 }
 
+.nav-links {
+  margin: 16px 30px;
+}
+
 ul .nav-links {
   list-style-type: none;
-  margin: 0;
-  padding: 0;
 }
 
 .nav-top-links,
@@ -32,11 +35,11 @@ ul .nav-links {
 .navbar a {
   text-decoration: none;
   color: rgba(0, 0, 0, 0.87);
-
 }
 
-a:hover {
+.navbar a:hover {
   text-decoration: underline;
+  opacity: .85;
 }
 
 .google-apps {
@@ -58,21 +61,29 @@ a:hover {
   opacity: .85;
 }
 
-/* Logo area */
-
-#logo {
-  /* border: dotted black 1px;
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-  padding: 5em;
-  max-width: 30%; */
+.sign-in a {
+  background-color: #4285f4;
+  color: #ffffff;
+  font-weight: 700;
+  line-height: 28px;
+  padding: 6px 12px;
+  border: 1px solid #4285f4;
+  margin-left: 8px;
+  cursor: default;
+  border-radius: 2px;
 }
+
+.sign-in a:hover {
+  text-decoration: none;
+}
+
+/* Logo area */
 
 #googlelogo {
   display: block;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20px;
   padding-top: 5em;
   padding-bottom: 2em;
   width: 17em;
@@ -82,48 +93,66 @@ a:hover {
 /* Search area */
 
 .search-area {
-  /* display: block; */
   margin: 0 auto;
   width: 700px;
 }
 
 .search-box {
-  /* border: dotted black 1px; */
-  /* display: flex;
-  justify-content: center; */
-  /* display: block; */
   margin: 0 auto;
   max-width: 70%;
 }
 
 .search-field {
-  height: 2.5em;
-  border: solid lightgray 1px;
+  height: 44px;
+  border: 1px solid #dfe1e5;
   border-radius: 22px;
-  box-shadow: 0px 0.5px 1px 0px #8E8891;
-  /* position: relative;	 */
+  box-shadow: none;
   display: flex;
-  /* flex-wrap: wrap; */
   overflow: hidden;
- 
-
 }
 
-#search {
+.search-field:hover {
+  box-shadow: 0 1px 6px 0 rgba(32, 33, 36, 0.28);
+  border-color: rgba(223, 225, 229, 0);
+}
+
+#search-input {
   display: flex;
   flex: 100%;
   align-self: center;
   border: none;
-  /* margin-right: 30px;
-  margin-left: auto;
-  margin-right: auto;
-  max-width: auto; */
   font-size: 16px;
   line-height: 34px;
 }
 
-.looking-glass {
-  height: 40px;
+#search-input:focus {
+  outline: none;
+}
+
+#magnifying-glass {
+  height: 54px;
+}
+
+.magnifying {
+  width: 30px;
+  background-image: url(https://www.google.com/images/searchbox/desktop_searchbox_sprites302_hr.webp);
+  background-repeat: no-repeat;
+  background-position: 15px 14px;
+  background-size: 20px 40px;
+  padding-top: 12px;
+  padding-left: 10px;
+  margin-bottom: 8px;
+  margin-right: 8px;
+}
+
+.mic {
+  width: 40px;
+  height: 44px;
+  background-image: url(images/mic_icon.png);
+  background-repeat: no-repeat;
+  background-size: 25px 25px;
+  background-position: -4px 10px;
+  padding-right: 5px;
 }
 
 /* Buttons */
@@ -131,38 +160,41 @@ a:hover {
 .buttons {
   display: flex;
   justify-content: center;
-  /* flex-basis: auto;*/
   margin: 20px;
 }
 
 .btn {
-  display: inline-block;
   padding: 4px 16px;
   font-size: 14px;
   line-height: 27px;
-  color: #222222;
-  margin: 1em 0.5em;
+  color: #5F6368;
+  margin: 1em 5px;
   border: 1px solid #f2f2f2;
   background-color: #f2f2f2;
   border-radius: 4px;
+  cursor: pointer;
+
 }
 
 .btn:hover {
   border: 1px solid #c6c6c6;
+  color: #222222;
 }
 
 .btn:focus {
   border: 1px solid #4d90fe;
   outline: none;
-
 }
 
 /* Footer */
 
+footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
 #footer {
-  /* display: block; */
-  /* position: absolute; */
-  /* text-align: left; */
   background: #f2f2f2;
   line-height: 40px;
 }
@@ -176,42 +208,26 @@ a:hover {
   text-decoration: underline;
 }
 
-
-.footer-top {
+.footer {
   border-top: 1px solid #e4e4e4;
-  border-bottom: 1px solid #e4e4e4;
-  margin-left: 27px;
-  font-size: 15px;
-  color: rgba(0, 0, 0, 0.54);
-}
-
-.footer-btm {
   font-size: 14px;
 }
 
-.footer-btm-left {
-  /* max-width: 50%;   */
+.footer-left {
   display: inline-block;
-  margin-left: -13px;
-
-
-
 }
 
-.footer-btm-left a {
-  padding-left: 27px;
-}
-
-
-.footer-btm-right {
+.footer-right {
   float: right;
   display: inline-block;
   position: relative;
   padding-right: 27px;
 }
 
-.footer-btm-right a {
-  /* margin: 0 15px; */
+.footer-left a {
   padding-left: 27px;
+}
 
+.footer-right a {
+  padding-left: 27px;
 }
